@@ -29,7 +29,7 @@ if __name__ == '__main__':
         script.on('message', on_message)
         script.load()
         sys.stdin.read()
-    except frida.ProcessNotFoundError as error:
+    except frida.InvalidArgumentError as error:
         print(error)
     except frida.ServerNotRunningError as error:
         print(error)
