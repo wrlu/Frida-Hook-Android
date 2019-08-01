@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="921b7fe1-dcd4-44b5-8138-deea917bd47b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/HookHiCallAndroid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HookHomeVisionHttp2Android.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HookOkhttp3RequestAndroid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FridaHook.py" beforeDir="false" afterPath="$PROJECT_DIR$/FridaHook.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HookTLSAndroid.js" beforeDir="false" afterPath="$PROJECT_DIR$/HookTLSAndroid.js" afterDir="false" />
     </list>
@@ -11,83 +15,34 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FridaHook.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/HookTLSAndroid.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>TrustManagers</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Hook.js" />
-        <option value="$PROJECT_DIR$/HookDanaleLog.js" />
-        <option value="$PROJECT_DIR$/HookHiLinkLogAndroid.js" />
-        <option value="$PROJECT_DIR$/HookDanaleSDKDeviceAndroid.js" />
-        <option value="$PROJECT_DIR$/HookDanaleLogAndroid.js" />
-        <option value="$PROJECT_DIR$/HookDanaleRxHelperAndroid.js" />
-        <option value="$PROJECT_DIR$/HookDanaleLoginAndroid.js" />
-        <option value="$PROJECT_DIR$/j.js" />
-        <option value="$PROJECT_DIR$/HookTLS.js" />
-        <option value="$PROJECT_DIR$/FridaHook.py" />
-        <option value="$PROJECT_DIR$/HookTLSAndroid.js" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="6" />
-    <option name="y" value="30" />
-    <option name="width" value="1269" />
-    <option name="height" value="669" />
-  </component>
+  <component name="ProjectId" id="1OgfmtOXFyC8cs5tn11LMXiBG38" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="frida-hook-android" type="b2602c69:ProjectViewProjectNode" />
-              <item name="frida-hook-android" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wrlu\OneDrive\信息安全研究\移动安全-Android\Frida-Android\frida-hook-android" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -167,80 +122,20 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49825174" visible="true" weight="0.19062749" />
-      <window_info id="Structure" order="1" sideWeight="0.50174826" side_tool="true" weight="0.19936457" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.43356642" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32867134" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32867134" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32756633" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-  </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/HookDanaleLog.js" />
-    <entry file="file://$PROJECT_DIR$/HookHiLinkLogAndroid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="81" selection-start-line="12" selection-start-column="81" selection-end-line="12" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files/Python/Python27/Lib/site-packages/frida/core.py" />
-    <entry file="file://$PROJECT_DIR$/HookDanaleLoginAndroid.js" />
-    <entry file="file://$PROJECT_DIR$/j.js" />
-    <entry file="file://$PROJECT_DIR$/HookDanaleRxHelperAndroid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="86" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HookDanaleSDKDeviceAndroid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HookDanaleLogAndroid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FridaHook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="30" column="24" lean-forward="true" selection-start-line="30" selection-start-column="24" selection-end-line="30" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HookTLSAndroid.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
