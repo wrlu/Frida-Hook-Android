@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="921b7fe1-dcd4-44b5-8138-deea917bd47b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/HookHiCallAndroid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HookHomeVisionHttp2Android.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HookOkhttp3RequestAndroid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HookDanaleTokenAndroid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HookHwTLSAndroid.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FridaHook.py" beforeDir="false" afterPath="$PROJECT_DIR$/FridaHook.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HookTLSAndroid.js" beforeDir="false" afterPath="$PROJECT_DIR$/HookTLSAndroid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HookTLSAndroid.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
