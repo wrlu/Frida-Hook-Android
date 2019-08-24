@@ -3,7 +3,16 @@ import frida
 
 
 js_file_names = ['HwTLS']
-process_name = 'com.huawei.himovie.tv'
+# process_names = [
+#     'com.huawei.hdpartner'
+# ]
+process_names = [
+    'com.huawei.homevision.launcher',
+    # 'com.huawei.hwid.tv',
+    'com.huawei.homevision.smarthome',
+    # 'com.huawei.homevision.videocall',
+    # 'com.huawei.himovie.tv',
+]
 
 
 def on_message(message, data):
@@ -25,21 +34,19 @@ if __name__ == '__main__':
         # Huawei Nexus 6P
         # device = manager.get_device('84B5T15B03006088')
 
-        # Google Pixel 3
-        # device = manager.get_device('8AXX11E93')
-
         # Hisilicon OSCA-550
         device = manager.get_device('192.168.137.97:5555')
 
-        processes = device.enumerate_processes()
-        for process in processes:
+        all_processes = device.enumerate_processes()
+        for process in all_processes:
             print(process)
-        device.get_process(process_name)
-        process = device.attach(process_name)
-        for js_file_name in js_file_names:
-            script = process.create_script(open('Hook' + js_file_name + 'Android.js').read())
-            script.on('message', on_message)
-            script.load()
+        for process_name in process_names:
+            process = device.attach(process_name)
+            for js_file_name in js_file_names:
+                process_name_var = 'var _pname = "'+process_name+'";'
+                script = process.create_script(process_name_var + open('Hook' + js_file_name + 'Android.js').read())
+                script.on('message', on_message)
+                script.load()
         sys.stdin.read()
     except frida.InvalidArgumentError as e:
         print('[Error] 参数错误(设备不存在): '+repr(e))
