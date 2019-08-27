@@ -6,7 +6,7 @@ setImmediate(function() {
             for(var i = 0; i < remoteCallInfoList.size(); ++i) {
                 send('remoteCallInfo: ' + remoteCallInfoList.get(i).toString());
             }
-            return this.dial(remoteCallInfoList)
+            return this.dial(remoteCallInfoList);
         }
         var EnContactInfoUtil = Java.use('com.huawei.homevision.videocallshare.util.EnContactInfoUtil');
         EnContactInfoUtil.filterDeviceList.implementation = function (deviceInfoList, isFilterMobile) {

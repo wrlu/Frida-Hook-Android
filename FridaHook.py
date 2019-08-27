@@ -2,17 +2,18 @@ import sys
 import frida
 
 
-js_file_names = ['HwTLS']
-# process_names = [
-#     'com.huawei.hdpartner'
-# ]
+js_file_names = ['TLS', 'HiMessage']
 process_names = [
-    'com.huawei.homevision.launcher',
-    # 'com.huawei.hwid.tv',
-    'com.huawei.homevision.smarthome',
-    # 'com.huawei.homevision.videocall',
-    # 'com.huawei.himovie.tv',
+    # 'com.huawei.hwid',
+    'com.huawei.hdpartner'
 ]
+# process_names = [
+#     'com.huawei.homevision.launcher',
+#     'com.huawei.hwid.tv',
+#     'com.huawei.homevision.smarthome',
+#     'com.huawei.homevision.videocall',
+#     'com.huawei.himovie.tv',
+# ]
 
 
 def on_message(message, data):
@@ -31,11 +32,14 @@ if __name__ == '__main__':
         devices = manager.enumerate_devices()
         for ldevice in devices:
             print(ldevice)
+        # Google Pixel
+        # device = manager.get_device('FA74D0301125')
+
         # Huawei Nexus 6P
-        # device = manager.get_device('84B5T15B03006088')
+        device = manager.get_device('84B5T15B03006088')
 
         # Hisilicon OSCA-550
-        device = manager.get_device('192.168.137.97:5555')
+        # device = manager.get_device('192.168.137.15:5555')
 
         all_processes = device.enumerate_processes()
         for process in all_processes:
@@ -49,7 +53,7 @@ if __name__ == '__main__':
                 script.load()
         sys.stdin.read()
     except frida.InvalidArgumentError as e:
-        print('[Error] 参数错误(设备不存在): '+repr(e))
+        print('[Error] 参数错误: '+repr(e))
     except frida.ProcessNotFoundError as e:
         print('[Error] 进程不存在: '+repr(e))
     except frida.ServerNotRunningError as e:

@@ -5,14 +5,14 @@ function sendp(message) {
 setImmediate(function() {
     Java.perform(function() {
     /*
-        okhttp3.x hook
+        Okhttp3.x hook
     */
 //        Hook original okhttp3.CertificatePinner.check function
         try {
             var CertificatePinner = Java.use('okhttp3.CertificatePinner');
-            sendp('OkHTTP 3.x Found');
+            sendp('[+] OkHTTP 3.x Found');
             CertificatePinner.check.overload('java.lang.String', 'java.util.List').implementation = function () {
-                sendp('OkHTTP 3.x CertificatePinner.check() called');
+                sendp('[*] OkHTTP 3.x CertificatePinner.check() called');
             }
         } catch (e) {
             sendp(e);
@@ -21,9 +21,9 @@ setImmediate(function() {
 //        Hook okhttp3.g.a function
         try {
             var CertificatePinner = Java.use('okhttp3.g');
-            sendp('OkHTTP 3.x (g.check mixed) Found');
+            sendp('[+] OkHTTP 3.x (g.check mixed) Found');
             CertificatePinner.check.overload('java.lang.String', 'java.util.List').implementation = function () {
-                sendp('OkHTTP 3.x g.check() called');
+                sendp('[*] OkHTTP 3.x g.check() called');
             }
         } catch (e) {
             sendp(e);
@@ -32,9 +32,9 @@ setImmediate(function() {
 //        Hook okhttp3.g.a function
         try {
             var CertificatePinner = Java.use('okhttp3.g');
-            sendp('OkHTTP 3.x (g.a mixed) Found');
+            sendp('[+] OkHTTP 3.x (g.a mixed) Found');
             CertificatePinner.a.overload('java.lang.String', 'java.util.List').implementation = function () {
-                sendp('OkHTTP 3.x g.a() called');
+                sendp('[*] OkHTTP 3.x g.a() called');
             }
         } catch (e) {
             sendp(e);
@@ -43,9 +43,9 @@ setImmediate(function() {
 //        Hook okhttp3.d.a function
         try {
             var CertificatePinner = Java.use('okhttp3.d');
-            sendp('OkHTTP 3.x (d.a mixed) Found');
+            sendp('[+] OkHTTP 3.x (d.a mixed) Found');
             CertificatePinner.a.overload('java.lang.String', 'java.util.List').implementation = function () {
-                sendp('OkHTTP 3.x g.d() called');
+                sendp('[*] OkHTTP 3.x g.d() called');
             }
         } catch (e) {
             sendp(e);
@@ -54,15 +54,14 @@ setImmediate(function() {
     /*
         Android 7.0+ TrustManagerImpl hook
     */
-//        Hook com.android.org.conscrypt.TrustManagerImpl.verifyChain function
         try {
             var TrustManagerImpl = Java.use('com.android.org.conscrypt.TrustManagerImpl');
-            sendp('Android 7.0+ TrustManagerImpl Found');
-            TrustManagerImpl.verifyChain.implementation = function (untrustedChain, trustAnchorChain, host, clientAuth, ocspData, tlsSctData) {
-                sendp('Conscrypt TrustManagerImpl.verifyChain() called');
+            sendp('[+] Android 7.0+ TrustManagerImpl Found')
+            TrustManagerImpl.verifyChain.implementation = function(untrustedChain, trustAnchorChain, host, clientAuth, ocspData, tlsSctData) {
+                sendp('[*] Android 7+ TrustManagerImpl.verifyChain() called');
                 return untrustedChain;
             }
-        } catch (e) {
+        } catch (err) {
             sendp(e);
         }
 
@@ -72,17 +71,17 @@ setImmediate(function() {
         try {
 //        Hook javax.net.ssl.HttpsURLConnection.setDefaultHostnameVerifier() function
             var HttpsURLConnection = Java.use('javax.net.ssl.HttpsURLConnection');
-            sendp('JSSE HttpsURLConnection Found');
+            sendp('[+] JSSE HttpsURLConnection Found');
             HttpsURLConnection.setDefaultHostnameVerifier.implementation = function (hostnameVerifier) {
-                sendp('JSSE HttpsURLConnection.setDefaultHostnameVerifier() called');
+                sendp('[*] JSSE HttpsURLConnection.setDefaultHostnameVerifier() called');
             };
 //        Hook javax.net.ssl.HttpsURLConnection.setSSLSocketFactory() function
             HttpsURLConnection.setSSLSocketFactory.implementation = function (SSLSocketFactory) {
-                sendp('JSSE HttpsURLConnection.setSSLSocketFactory() called');
+                sendp('[*] JSSE HttpsURLConnection.setSSLSocketFactory() called');
             };
 //        Hook javax.net.ssl.HttpsURLConnection.setHostnameVerifier() function
             HttpsURLConnection.setHostnameVerifier.implementation = function (hostnameVerifier){
-                sendp('JSSE HttpsURLConnection.setHostnameVerifier() called');
+                sendp('[*] JSSE HttpsURLConnection.setHostnameVerifier() called');
             };
         } catch (e) {
             sendp(e);
