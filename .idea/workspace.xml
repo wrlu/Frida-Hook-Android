@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="921b7fe1-dcd4-44b5-8138-deea917bd47b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Frida.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Frida.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FridaHook.py" beforeDir="false" afterPath="$PROJECT_DIR$/FridaHook.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HookHiCallAndroid.js" beforeDir="false" afterPath="$PROJECT_DIR$/HookHiCallAndroid.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HookHiMessageAndroid.js" beforeDir="false" afterPath="$PROJECT_DIR$/HookHiMessageAndroid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HookHwTLSAndroid.js" beforeDir="false" afterPath="$PROJECT_DIR$/HookTLSAndroid.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
