@@ -53,5 +53,3 @@ if __name__ == '__main__':
         print('[严重] 进程未找到，请在设备上启动目标应用程序，详细信息: '+repr(e))
     except frida.ServerNotRunningError as e:
         print('[严重] 服务端没有运行，请在设备上使用超级用户权限运行frida服务端程序，详细信息: '+repr(e))
-
-
