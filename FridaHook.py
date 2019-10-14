@@ -26,10 +26,10 @@ if __name__ == '__main__':
         for ldevice in devices:
             print('[提示] 发现设备: '+str(ldevice))
         # Google Pixel
-        device = manager.get_device('FA74D0301125')
+        # device = manager.get_device('FA74D0301125')
 
         # Huawei Nexus 6P
-        # device = manager.get_device('84B5T15B03006088')
+        device = manager.get_device('84B5T15B03006088')
 
         print('[提示] 连接目标设备成功: '+str(device))
         front_app = device.get_frontmost_application()
