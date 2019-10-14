@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": "/usr/bin/python3"
+    "python.pythonPath": "C:\\Program Files\\Python\\Python37\\python.exe",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }
