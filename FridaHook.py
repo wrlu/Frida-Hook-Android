@@ -4,7 +4,7 @@ import frida
 
 js_file_names = ['TLS']
 process_names = [
-    'com.huawei.appmarket',
+    'com.android.launcher3',
 ]
 
 
@@ -13,7 +13,7 @@ def raise_send(msg):
 
 
 def raise_info(msg):
-    print('\033[0;32m[Info] ' + msg + '\033[0m')
+    print('[Info] ' + msg)
 
 
 def raise_warning(msg):
@@ -41,10 +41,10 @@ if __name__ == '__main__':
         for ldevice in devices:
             raise_info('Device discovered: '+str(ldevice))
         # Google Pixel
-        # device = manager.get_device('FA74D0301125', 1)
+        device = manager.get_device('FA74D0301125', 1)
 
         # Huawei Nexus 6P
-        device = manager.get_device('84B5T15B03006088', 1)
+        # device = manager.get_device('84B5T15B03006088', 1)
 
         raise_info('Connect to the target device successfully: '+str(device))
         front_app = device.get_frontmost_application()
@@ -61,6 +61,7 @@ if __name__ == '__main__':
                 raise_info('Load script name: Hook' + js_file_name + 'Android.js')
                 script.load()
         raise_info('Waiting for scripts...')
+        print('----------------------------------------')
         sys.stdin.read()
     except frida.InvalidArgumentError as e:
         raise_error('Invalid argument, maybe a JavaScript syntax error or device disconnected. Details: '+repr(e))
