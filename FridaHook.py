@@ -4,7 +4,7 @@ import frida
 
 js_file_names = ['TLS']
 process_names = [
-    'com.android.launcher3',
+    'com.huawei.appmarket',
 ]
 
 
@@ -40,11 +40,18 @@ if __name__ == '__main__':
         devices = manager.enumerate_devices()
         for ldevice in devices:
             raise_info('Device discovered: '+str(ldevice))
+
         # Google Pixel
-        device = manager.get_device('FA74D0301125', 1)
+        # device = manager.get_device('FA74D0301125', 1)
 
         # Huawei Nexus 6P
         # device = manager.get_device('84B5T15B03006088', 1)
+
+        # Motorola Nexus 6
+        device = manager.get_device('ZX1G22GVVH', 1)
+
+        # LG Nexus 5
+        # device = manager.get_device('07a6d474012a4eab', 1)
 
         raise_info('Connect to the target device successfully: '+str(device))
         front_app = device.get_frontmost_application()
@@ -54,7 +61,7 @@ if __name__ == '__main__':
         for process_name in process_names:
             process = device.attach(process_name)
             for js_file_name in js_file_names:
-                process_name_var = 'var _pname = "'+process_name+'";'
+                process_name_var = 'var __process_name = "'+process_name+'";'
                 raise_info('Inject script name: Hook' + js_file_name + 'Android.js')
                 script = process.create_script(process_name_var + open('Hook' + js_file_name + 'Android.js').read())
                 script.on('message', on_message)

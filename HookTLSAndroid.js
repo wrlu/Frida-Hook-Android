@@ -1,5 +1,5 @@
 function sendp(message) {
-    send('['+_pname+'] '+message)
+    send('['+__process_name+'] '+message)
 }
 
 setImmediate(function() {
@@ -61,7 +61,7 @@ setImmediate(function() {
                 sendp('[*] Android 7+ TrustManagerImpl.verifyChain() called');
                 return untrustedChain;
             }
-        } catch (err) {
+        } catch (e) {
             sendp(e);
         }
 
