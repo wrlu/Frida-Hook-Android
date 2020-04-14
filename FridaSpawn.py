@@ -2,9 +2,9 @@ import sys
 import frida
 
 
-js_file_names = ['Health']
+js_file_names = ['ART']
 process_names = [
-    'com.huawei.health', 'com.huawei.health:PhoneService', 'com.huawei.health:DaemonService'
+    'com.huawei.smarthome'
 ]
 
 
@@ -27,6 +27,9 @@ def raise_error(msg):
 def on_message(message, data):
     if message['type'] == 'send':
         raise_send(message['payload'])
+        base = message['payload']['base']
+        size = int(message['payload']['size'])
+        print(hex(base), size)
     elif message['type'] == 'error':
         raise_error(message['description'])
     else:
@@ -57,24 +60,28 @@ if __name__ == '__main__':
         front_app = device.get_frontmost_application()
         raise_info('Front Application on the device: '+str(front_app))
         if front_app.identifier not in process_names:
-            raise_warning('Device front application is different from all the hooked application ( '+front_app.identifier+' != '+str(process_names)+' )')
+            raise_warning('Device front application is different from all the Spawned application ( '+front_app.identifier+' != '+str(process_names)+' )')
         for process_name in process_names:
-            session = device.attach(process_name)
+            pid = device.spawn(process_name)
+            session = device.attach(pid)
             for js_file_name in js_file_names:
                 process_name_var = 'var __process_name = "'+process_name+'";'
-                raise_info('Inject script name: Hook' + js_file_name + 'Android.js')
-                script = session.create_script(process_name_var + open('Hook' + js_file_name + 'Android.js').read())
+                raise_info('Inject script name: Spawn' + js_file_name + 'Android.js')
+                script = session.create_script(process_name_var + open('Spawn' + js_file_name + 'Android.js').read())
                 script.on('message', on_message)
-                raise_info('Load script name: Hook' + js_file_name + 'Android.js')
+                raise_info('Load script name: Spawn' + js_file_name + 'Android.js')
                 script.load()
+            device.resume(pid)
         raise_info('Waiting for scripts...')
         print('----------------------------------------')
         sys.stdin.read()
     except frida.InvalidArgumentError as e:
-        raise_error('Invalid argument, maybe a JavaScript syntax error or device disconnected. Details: '+repr(e))
+        raise_error('Invalid argument, maybe a JavaScript syntax error or device disconnected. \nDetails: '+repr(e))
     except frida.ProcessNotFoundError as e:
-        raise_error('Cannot find the target process, please check your application status. Details: '+repr(e))
+        raise_error('Cannot find the target process, please check your application status. \nDetails: '+repr(e))
     except frida.ServerNotRunningError as e:
-        raise_error('Frida server is not running, please check if it is not start or crash. Details: '+repr(e))
+        raise_error('Frida server is not running, please check if it is not start or crash. \nDetails: '+repr(e))
+    except frida.NotSupportedError as e:
+        raise_error('Your Android OS is not supported, please check your Android and Magisk version. \nDetails: '+repr(e))
     except Exception as e:
-        raise_error('Unknown error or exception. Details: ' + repr(e))
+        raise_error('Unknown error or exception. \nDetails: ' + repr(e))

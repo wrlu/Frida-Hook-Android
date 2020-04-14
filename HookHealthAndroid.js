@@ -1,11 +1,20 @@
+function sendp(message) {
+    send('['+__process_name+'] '+message)
+}
+
 setImmediate(function() {
     Java.perform(function () {
-        var BTHandshakeManager = Java.use('o.byr')
-        BTHandshakeManager.l.overload().implementation = function () {
-            var ret = BTHandshakeManager.l()
-            var newret = 'M0VQMD'
-            send(ret)
-            return newret
+        var BTHandshakeManager = Java.use('o.dbg')
+        BTHandshakeManager.o.overload().implementation = function () {
+            var retvalue = BTHandshakeManager.o()
+            sendp(retvalue)
+            return retvalue
+        }
+        var DeviceInfo = Java.use('com.huawei.hwcommonmodel.datatypes.DeviceInfo')
+        DeviceInfo.getProductType.overload().implementation = function () {
+            var retvalue = this.getProductType()
+            sendp(retvalue)
+            return 1
         }
     })
 })
