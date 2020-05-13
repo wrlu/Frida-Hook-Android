@@ -41,17 +41,17 @@ if __name__ == '__main__':
         for ldevice in devices:
             raise_info('Device discovered: '+str(ldevice))
 
-        # Google Pixel
-        # device = manager.get_device('FA74D0301125', 1)
-
-        # Huawei Nexus 6P
-        # device = manager.get_device('84B5T15B03006088', 1)
+        # Google Pixel 2 XL
+        # device = manager.get_device('909KPWQ2080977', 1)
 
         # Motorola Nexus 6
-        device = manager.get_device('ZX1G22GVVH', 1)
+        # device = manager.get_device('ZX1G22GVVH', 1)
 
         # LG Nexus 5
         # device = manager.get_device('07a6d474012a4eab', 1)
+
+        # PLAT 760
+        device = manager.get_device('172.16.0.243:5555', 1)
 
         raise_info('Connect to the target device successfully: '+str(device))
         front_app = device.get_frontmost_application()
@@ -71,10 +71,16 @@ if __name__ == '__main__':
         print('----------------------------------------')
         sys.stdin.read()
     except frida.InvalidArgumentError as e:
-        raise_error('Invalid argument, maybe a JavaScript syntax error or device disconnected. Details: '+repr(e))
+        raise_error('Invalid argument, '
+                    'maybe a JavaScript syntax error or device disconnected. \nDetails: ' + repr(e))
     except frida.ProcessNotFoundError as e:
-        raise_error('Cannot find the target process, please check your application status. Details: '+repr(e))
+        raise_error('Cannot find the target process, '
+                    'please check your application status. \nDetails: ' + repr(e))
     except frida.ServerNotRunningError as e:
-        raise_error('Frida server is not running, please check if it is not start or crash. Details: '+repr(e))
+        raise_error('Frida server is not running, '
+                    'please check if it is not start or crash. \nDetails: ' + repr(e))
+    except frida.NotSupportedError as e:
+        raise_error('Your Android OS or phone vendor is not supported, '
+                    'please check your phone vendor or disable the MagiskHide. \nDetails: ' + repr(e))
     except Exception as e:
-        raise_error('Unknown error or exception. Details: ' + repr(e))
+        raise_error('Unknown error or exception. \nDetails: ' + repr(e))
