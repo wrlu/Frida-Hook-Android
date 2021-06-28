@@ -2,10 +2,12 @@ import sys
 import frida
 
 
-js_file_names = ['Health']
+# JS files loading
+js_file_names = ['Work']
+# Process to hook
 process_names = [
-    'com.huawei.health', 'com.huawei.health:PhoneService', 'com.huawei.health:DaemonService'
-]
+
+] 
 
 
 def raise_send(msg):
@@ -42,16 +44,7 @@ if __name__ == '__main__':
             raise_info('Device discovered: '+str(ldevice))
 
         # Google Pixel 2 XL
-        # device = manager.get_device('909KPWQ2080977', 1)
-
-        # Motorola Nexus 6
-        # device = manager.get_device('ZX1G22GVVH', 1)
-
-        # LG Nexus 5
-        # device = manager.get_device('07a6d474012a4eab', 1)
-
-        # PLAT 760
-        device = manager.get_device('172.16.0.243:5555', 1)
+        device = manager.get_device('909KPWQ2080977', 1)
 
         raise_info('Connect to the target device successfully: '+str(device))
         front_app = device.get_frontmost_application()

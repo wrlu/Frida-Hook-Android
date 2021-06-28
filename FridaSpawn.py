@@ -2,10 +2,12 @@ import sys
 import frida
 
 
+# JS files loading
 js_file_names = ['ART']
+# Process to hook
 process_names = [
-    'com.huawei.smarthome'
-]
+
+] 
 
 
 def raise_send(msg):
